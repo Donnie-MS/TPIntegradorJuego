@@ -1,4 +1,4 @@
-# Nombre del juego (<- borrar y completar)
+# Arcane Bastion
 
 ## Equipo de desarrollo
 
