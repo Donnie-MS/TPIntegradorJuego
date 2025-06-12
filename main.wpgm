@@ -1,18 +1,22 @@
 import wollok.game.*
-
-import example.pepita
+import niveles.*
+import personajes.*
 
 program PepitaGame {
 	game.title("Pepita")
-	game.height(10)
-	game.width(10)
+	game.cellSize(1)
+	game.height(1024)
+	game.width(1920)
+	game.boardGround("PantallaInicio.png")
+	game.addVisual(pantallaInicio)
+	 keyboard.space().onPressDo({game.removeVisual(pantallaInicio)})
 
 	// add assets in asset folder, for example, for the background
   // game.boardGround("fondo2.jpg")
 
 	//
 
-	game.showAttributes(pepita) //Debug
+	//game.showAttributes()) //Debug
 
 	game.start()
 }
