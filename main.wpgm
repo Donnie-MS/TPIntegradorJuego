@@ -1,22 +1,20 @@
 import wollok.game.*
 import niveles.*
-import personajes.*
+import magos.*
+import arcaneBastion.arcaneBastion
 
-program PepitaGame {
-	game.title("Pepita")
-	game.cellSize(1)
-	game.height(1024)
-	game.width(1920)
+program ArcaneBastion {
+	/*
 	game.boardGround("PantallaInicio.png")
 	game.addVisual(pantallaInicio)
-	 keyboard.space().onPressDo({game.removeVisual(pantallaInicio)})
-
+	keyboard.space().onPressDo({game.removeVisual(pantallaInicio)})
+	*/
 	// add assets in asset folder, for example, for the background
-  // game.boardGround("fondo2.jpg")
+  	// game.boardGround("fondo2.jpg")
 
 	//
 
 	//game.showAttributes()) //Debug
-
+	arcaneBastion.iniciar()
 	game.start()
 }
