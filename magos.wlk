@@ -7,9 +7,10 @@ object mh1{
     magoHielo1.hacerHechizo()
   }
 }
-
-class MagoHielo inherits PersonajeAnimado{
-  var property vida = 100
+class Mago inherits CosaAnimada{
+   var property vida = 100
+}
+class MagoHielo inherits Mago{
   var property hechizoActual = new HechizoHielo(x = (x + 5), y= (y + 2), frames = ["frame1HH.png", "frame2HH.png", "frame3HH.png", "frame4HH.png"])
   //HACER LA POSICION DINAMICA
   var x = 20
@@ -20,14 +21,17 @@ class MagoHielo inherits PersonajeAnimado{
   }
   method position() = game.at(x,y)
 }
-class HechizoHielo inherits PersonajeAnimado{
-  var property danio = 25
+class Hechizo inherits CosaAnimada{
   var property x
   var property y 
+  var property danio = 25
   override method iniciar() {
     super()
     arcaneBastion.movimientoDerecha().add(self)
   }
+}
+class HechizoHielo inherits Hechizo{
+
   method moverseADerecha() {
     if (x < 96) {
       x += 1

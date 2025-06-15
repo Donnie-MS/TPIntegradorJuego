@@ -4,6 +4,11 @@ object arcaneBastion {
   const property cosasConAnimacion = []
   const property movimientoDerecha = []
   const property movimientoIzquierda = []
+  const property hechizosEnJuego = #{}
+  const property enemigosEnJuego = #{}
+  method hechizosActivos() = hechizosEnJuego
+  method enemigosActivos() = enemigosEnJuego
+
   method iniciar() {
     game.title("Arcane Bastion")
     game.cellSize(12.5)
@@ -21,7 +26,7 @@ object arcaneBastion {
   }
 }
 
-class PersonajeAnimado {//SI VAN HACER UNO QUE SEA SOLO DE 4 IMAGENES NI MÁS NI MENOS 
+class CosaAnimada {//SI VAN HACER UNO QUE SEA SOLO DE 4 IMAGENES NI MÁS NI MENOS 
   var property frames 
   var property index = 0
   var property image = null
@@ -34,5 +39,10 @@ class PersonajeAnimado {//SI VAN HACER UNO QUE SEA SOLO DE 4 IMAGENES NI MÁS NI
     game.addVisual(self)
     arcaneBastion.cosasConAnimacion().add(self)
   }
+  method desaparecer(){
+    game.removeVisual(self)
+  }
+  //method colisionaCon(cosa)
+  
 }
 

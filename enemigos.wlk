@@ -7,7 +7,7 @@ object dragon1{
   }
 }
 
-class Enemigo inherits PersonajeAnimado{
+class Enemigo inherits CosaAnimada{
   var property vida = 100
   var x = 96
   var y = 6
