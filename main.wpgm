@@ -9,11 +9,7 @@ program ArcaneBastion {
 	game.addVisual(pantallaInicio)
 	keyboard.space().onPressDo({game.removeVisual(pantallaInicio)})
 	*/
-	// add assets in asset folder, for example, for the background
-  	// game.boardGround("fondo2.jpg")
-
-	//
-
+	
 	//game.showAttributes()) //Debug
 	arcaneBastion.iniciar()
 	game.start()

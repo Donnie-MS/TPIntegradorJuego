@@ -8,7 +8,7 @@ object bastion {
     method text() = "Vidas restantes: " + vida.toString()
 
     method textColor() = "#FA0770"
-
+    method position() = new MutablePosition(x = 5, y = 5)
     method recibirDanio(unEnemigo) {
         vida -= 1
         self.sonidoDanio().volume(0.4)

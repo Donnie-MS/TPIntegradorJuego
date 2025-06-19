@@ -1,5 +1,7 @@
 import magos.*
 import enemigos.*
+import bastion.*
+import menuYTeclado.*
 object arcaneBastion {
   const property cosasConAnimacion = []
   const property movimientoDerecha = []
@@ -14,7 +16,6 @@ object arcaneBastion {
     game.cellSize(12.5)
 	  game.height(48)
 	  game.width(96)
-    game.boardGround("EscenarioNivelFacil.jpg")
 
     game.onTick(100, "movimiento", {movimientoDerecha.forEach({cosa => cosa.moverseADerecha()})})
     game.onTick(250, "movimiento", {movimientoIzquierda.forEach({cosa => cosa.moverseAIzquierda()})})
@@ -26,7 +27,9 @@ object arcaneBastion {
     game.onCollideDo(magoHielo.hechizoActual(), {enemigo =>
       enemigo.lanzarAtaque()
     })
+    menu.iniciar()
   }
+  method clear() {}
 }
 
 class CosaAnimada {//SI VAN HACER UNO QUE SEA SOLO DE 4 IMAGENES NI MÁS NI MENOS 
