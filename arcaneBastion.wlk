@@ -19,13 +19,13 @@ object arcaneBastion {
     game.onTick(100, "movimiento", {movimientoDerecha.forEach({cosa => cosa.moverseADerecha()})})
     game.onTick(250, "movimiento", {movimientoIzquierda.forEach({cosa => cosa.moverseAIzquierda()})})
     magoHielo.iniciar()
+    magoHielo.hacerHechizo()
     game.onTick(150, "animarTodo", {cosasConAnimacion.forEach({cosa => cosa.animar()})})
-    /*
     dragon1.iniciar()
+
     game.onCollideDo(magoHielo.hechizoActual(), {enemigo =>
-      enemigo.recibeAtaque()
+      enemigo.removeVisual()
     })
-    */
   }
 }
 
@@ -42,7 +42,7 @@ class CosaAnimada {//SI VAN HACER UNO QUE SEA SOLO DE 4 IMAGENES NI MÁS NI MENO
     game.addVisual(self)
     arcaneBastion.cosasConAnimacion().add(self)
   }
-  method desaparecer(){
+  method removeVisual(){
     game.removeVisual(self)
   }
   //method colisionaCon(cosa)

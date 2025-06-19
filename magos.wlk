@@ -38,13 +38,9 @@ class MagoHielo inherits Mago{
   override method frames() = ["frame1MH.png", "frame2MH.png", "frame3MH.png", "frame4MH.png"]
   override method tipoDeMagia() = hielo
 }
-object magoHielo {
-  const magoHielo1 = new MagoHielo()
-  method iniciar() {
-    magoHielo1.iniciar()
-    magoHielo1.hacerHechizo()
-  }
+object magoHielo inherits MagoHielo(){
 }
+
 /*
 object magoArcano {
   const magoHielo1 = new MagoHielo(frames=["frame1MH.png", "frame2MH.png", "frame3MH.png", "frame4MH.png"]) 
