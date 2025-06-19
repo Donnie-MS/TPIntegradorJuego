@@ -18,24 +18,28 @@ object arcaneBastion {
 
     game.onTick(100, "movimiento", {movimientoDerecha.forEach({cosa => cosa.moverseADerecha()})})
     game.onTick(250, "movimiento", {movimientoIzquierda.forEach({cosa => cosa.moverseAIzquierda()})})
-    mh1.iniciar()
+    magoHielo.iniciar()
 
     game.onTick(150, "animarTodo", {cosasConAnimacion.forEach({cosa => cosa.animar()})})
+    /*
     dragon1.iniciar()
-
+    game.onCollideDo(magoHielo.hechizoActual(), {enemigo =>
+      enemigo.recibeAtaque()
+    })
+    */
   }
 }
 
 class CosaAnimada {//SI VAN HACER UNO QUE SEA SOLO DE 4 IMAGENES NI MÁS NI MENOS 
-  var property frames 
   var property index = 0
   var property image = null
+  method frames()
   method animar() {
     self.index((index + 1)%4)
-    self.image(frames.get(index))
+    self.image(self.frames().get(index))
   }
   method iniciar() {
-    image = frames.get(index)
+    image = self.frames().get(index)
     game.addVisual(self)
     arcaneBastion.cosasConAnimacion().add(self)
   }

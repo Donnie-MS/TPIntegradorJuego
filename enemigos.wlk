@@ -1,5 +1,6 @@
 import arcaneBastion.*
 //test enemigo dragon 
+/*
 object dragon1{
   const dr1 = new Enemigo(frames= ["frame1D.png", "frame2D.png", "frame3D.png", "frame4D.png"]) 
   method iniciar() {
@@ -22,3 +23,4 @@ class Enemigo inherits CosaAnimada{
     }
   }
 }
+*/

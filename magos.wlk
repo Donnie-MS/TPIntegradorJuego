@@ -1,23 +1,13 @@
 import arcaneBastion.*
-//MAGO HIELO TEST:
-object mh1{
-  const magoHielo1 = new MagoHielo(frames=["frame1MH.png", "frame2MH.png", "frame3MH.png", "frame4MH.png"]) 
-  method iniciar() {
-    magoHielo1.iniciar()
-    magoHielo1.hacerHechizo()
-  }
-}
 class Mago inherits CosaAnimada{
-   var property vida = 100
-}
-class MagoHielo inherits Mago{
-  var property hechizoActual = new HechizoHielo(x = (x + 5), y= (y + 2), frames = ["frame1HH.png", "frame2HH.png", "frame3HH.png", "frame4HH.png"])
+  var property hechizoActual = self.tipoDeMagia().hechizoDe(self)
+  method tipoDeMagia()
+  var property vida = 100
+  var property x = 20
+  var property y = 6
   //HACER LA POSICION DINAMICA
-  var x = 20
-  var y = 6
-
   method hacerHechizo() {
-    hechizoActual.iniciar()
+    self.hechizoActual().iniciar()
   }
   method position() = game.at(x,y)
 }
@@ -38,4 +28,61 @@ class HechizoHielo inherits Hechizo{
     }
   }
   method position() = game.at(x,y)
+}
+
+// ===============================
+// Definición de los magos Específicos
+// ===============================
+
+class MagoHielo inherits Mago{
+  override method frames() = ["frame1MH.png", "frame2MH.png", "frame3MH.png", "frame4MH.png"]
+  override method tipoDeMagia() = hielo
+}
+object magoHielo {
+  const magoHielo1 = new MagoHielo()
+  method iniciar() {
+    magoHielo1.iniciar()
+  }
+}
+/*
+object magoArcano {
+  const magoHielo1 = new MagoHielo(frames=["frame1MH.png", "frame2MH.png", "frame3MH.png", "frame4MH.png"]) 
+}
+object magoRayo {
+  const magoHielo1 = new MagoHielo(frames=["frame1MH.png", "frame2MH.png", "frame3MH.png", "frame4MH.png"]) 
+}
+
+object magoNaturaleza {
+  const magoHielo1 = new MagoHielo(frames=["frame1MH.png", "frame2MH.png", "frame3MH.png", "frame4MH.png"]) 
+}
+*/
+//Tipos de magos
+object hielo {
+  /*
+  var hechizoActual = null
+  method hechizoDe(unMago) {
+    hechizoActual = new HechizoHielo(x= (unMago.x() + 5), y = unMago.y(), frames = ["frame1HH.png", "frame2HH.png", "frame3HH.png", "frame4HH.png"])
+    return hechizoActual
+  }
+  method hechizoActual() = hechizoActual
+  */
+}
+object fuego {
+  method hechizo() {
+    
+  }
+}
+
+object arcano {
+  method hechizo() {
+
+  }
+}
+
+object rayo {
+  
+}
+
+object naturaleza {
+
 }
