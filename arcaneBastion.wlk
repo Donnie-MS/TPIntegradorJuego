@@ -21,7 +21,7 @@ object arcaneBastion {
     magoHielo.iniciar()
     magoHielo.hacerHechizo()
     game.onTick(150, "animarTodo", {cosasConAnimacion.forEach({cosa => cosa.animar()})})
-    dragon1.iniciar()
+    dragon.iniciar()
 
     game.onCollideDo(magoHielo.hechizoActual(), {enemigo =>
       enemigo.removeVisual()

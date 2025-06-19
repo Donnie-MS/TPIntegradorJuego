@@ -33,7 +33,6 @@ class Hechizo inherits CosaAnimada{
 // Definición de los magos Específicos
 // ===============================
 
-
 object magoHielo inherits Mago(tipoDeMagia = hielo, frames=["frame1MH.png", "frame2MH.png", "frame3MH.png", "frame4MH.png"]){
 }
 object magoArcano inherits Mago(tipoDeMagia = hielo, frames=["frame1MH.png", "frame2MH.png", "frame3MH.png", "frame4MH.png"]){

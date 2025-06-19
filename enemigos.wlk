@@ -1,12 +1,4 @@
 import arcaneBastion.*
-//test enemigo dragon 
-
-object dragon1{
-  const dr1 = new Enemigo() 
-  method iniciar() {
-    dr1.iniciar()
-  }
-}
 
 class Enemigo inherits CosaAnimada{
   override method frames() = ["frame1D.png", "frame2D.png", "frame3D.png", "frame4D.png"]
@@ -23,4 +15,48 @@ class Enemigo inherits CosaAnimada{
       x -= 1
     }
   }
+}
+object dragon inherits Enemigo() {
+}
+
+object arbolMaldito inherits Enemigo() {
+}
+object bossRayo inherits Enemigo() {
+
+}
+
+object esqueleto inherits Enemigo() {
+
+}
+
+object fantasma inherits Enemigo() {
+
+}
+
+object hechiceroSupremo inherits Enemigo() {
+  
+}
+
+object giganteDeHielo inherits Enemigo() {
+
+}
+
+object golem inherits Enemigo() {
+
+}
+
+object loboDeHielo inherits Enemigo() {
+
+}
+
+object magoOscuro inherits Enemigo() {
+
+}
+
+object mounstruoPantano inherits Enemigo() {
+
+}
+
+object arpia inherits Enemigo() {
+  
 }
