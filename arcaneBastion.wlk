@@ -24,7 +24,7 @@ object arcaneBastion {
     dragon.iniciar()
 
     game.onCollideDo(magoHielo.hechizoActual(), {enemigo =>
-      enemigo.removeVisual()
+      enemigo.lanzarAtaque()
     })
   }
 }
