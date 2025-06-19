@@ -21,7 +21,7 @@ class Hechizo inherits CosaAnimada{
   }
 }
 class HechizoHielo inherits Hechizo{
-
+  override method frames() = ["frame1HH.png", "frame2HH.png", "frame3HH.png", "frame4HH.png"]
   method moverseADerecha() {
     if (x < 96) {
       x += 1
@@ -42,6 +42,7 @@ object magoHielo {
   const magoHielo1 = new MagoHielo()
   method iniciar() {
     magoHielo1.iniciar()
+    magoHielo1.hacerHechizo()
   }
 }
 /*
@@ -58,14 +59,12 @@ object magoNaturaleza {
 */
 //Tipos de magos
 object hielo {
-  /*
   var hechizoActual = null
   method hechizoDe(unMago) {
-    hechizoActual = new HechizoHielo(x= (unMago.x() + 5), y = unMago.y(), frames = ["frame1HH.png", "frame2HH.png", "frame3HH.png", "frame4HH.png"])
+    hechizoActual = new HechizoHielo(x= (unMago.x() + 5), y = unMago.y())
     return hechizoActual
   }
   method hechizoActual() = hechizoActual
-  */
 }
 object fuego {
   method hechizo() {
