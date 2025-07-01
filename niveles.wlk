@@ -22,7 +22,7 @@ object gameOver{
 }
 object nivelFacil{
     method image() = "EscenarioNivelFacil.png" 
-    method position() = new MutablePosition(x = 0, y = 0)
+    method  position ()= new MutablePosition(x = 0, y = 0)
      method iniciarNivel() {
         //game.addVisual(self)
         config.configTeclas()

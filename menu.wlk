@@ -15,8 +15,8 @@ object menu{
     }
     method activarModoSurvival(){
         keyboard.s().onPressDo({
-            gameaddVisual(nivelSurvival)
             game.removeVisual(self)
+            game.addVisual(nivelSurvival)
             nivelSurvival.iniciarNivel()
         })
     }
