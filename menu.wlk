@@ -9,11 +9,13 @@ object menu{
     method activarModoFacil(){
         keyboard.e().onPressDo({
             game.removeVisual(self)
+            game.addVisual(nivelFacil)
             nivelFacil.iniciarNivel()
         })
     }
     method activarModoSurvival(){
         keyboard.s().onPressDo({
+            gameaddVisual(nivelSurvival)
             game.removeVisual(self)
             nivelSurvival.iniciarNivel()
         })
