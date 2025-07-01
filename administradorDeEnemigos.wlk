@@ -63,7 +63,7 @@ object administradorDeEnemigos {
             var nombreParaEnemigo = self.nombre()
 
             if (game.getObjectsIn(posicionTemporal).isEmpty()) {
-                nombreParaEnemigo = new Enemigo(position = posicionTemporal, tipo = tipo)
+                nombreParaEnemigo = new Enemigo(position = posicionTemporal, tipo = tipo, frames = tipo.frames())
                 enemigos.add(nombreParaEnemigo)
                 self.sumarEnemigo()
                 //administradorDeOleadas.sumarEnemigo()

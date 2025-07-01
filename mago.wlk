@@ -1,11 +1,10 @@
 import arcaneBastion.*
 class Mago inherits CosaAnimada{
   var property hechizoActual = self.tipoDeMagia().hechizoDe(self)
-  const property frames
   var property tipoDeMagia 
   var property vida = 100
-
-  method position() = new MutablePosition(x = 20, y = 6)
+  method danio() = hechizoActual.danio()
+  method position() = new MutablePosition(x = 12, y = 6)
 
   method hacerHechizo() {
     self.hechizoActual().iniciar()
@@ -14,8 +13,7 @@ class Mago inherits CosaAnimada{
 class Hechizo inherits CosaAnimada{
   var property x
   var property y 
-  var property danio = 25
-  const property frames
+  var property danio
   override method iniciar() {
     super()
     arcaneBastion.movimientoDerecha().add(self)
@@ -42,38 +40,46 @@ class TiposDeMagia {
   method hechizoActual() = hechizoActual
   method hechizoDe(unMago)
 }
+
 object hielo inherits TiposDeMagia{
   override method hechizoDe(unMago) {
-    hechizoActual = new Hechizo(x= (unMago.position().x() + 5), y = unMago.position().y(), frames = ["frame1HH.png", "frame2HH.png", "frame3HH.png", "frame4HH.png"])
+    hechizoActual = new Hechizo(x= (unMago.position().x() + 5), y = unMago.position().y(), 
+    frames = ["frame1HH.png", "frame2HH.png", "frame3HH.png", "frame4HH.png"],
+    danio = 25
+    )
+
     return hechizoActual
   }
 }
 object fuego inherits TiposDeMagia{
   override method hechizoDe(unMago) {
-    hechizoActual = new Hechizo(x = (unMago.position().x() + 5),
-                                y = unMago.position().y(), 
-                                frames = ["frame1HH.png", "frame2HH.png", "frame3HH.png", "frame4HH.png"])
+    hechizoActual = new Hechizo(x= (unMago.position().x() + 5), y = unMago.position().y(), 
+    frames = ["frame1HH.png", "frame2HH.png", "frame3HH.png", "frame4HH.png"],
+    danio = 25
+    )
+
     return hechizoActual
   }
 }
 
-object arcano inherits TiposDeMagia{
+object tierra inherits TiposDeMagia{
   override method hechizoDe(unMago) {
-    hechizoActual = new Hechizo(x= (unMago.position().x() + 5), y = unMago.position().y(), frames = ["frame1HH.png", "frame2HH.png", "frame3HH.png", "frame4HH.png"])
+    hechizoActual = new Hechizo(x= (unMago.position().x() + 5), y = unMago.position().y(), 
+    frames = ["frame1HH.png", "frame2HH.png", "frame3HH.png", "frame4HH.png"],
+    danio = 25
+    )
+
     return hechizoActual
   }
 }
 
-object rayo inherits TiposDeMagia{
+object viento inherits TiposDeMagia{
   override method hechizoDe(unMago) {
-    hechizoActual = new Hechizo(x= (unMago.position().x() + 5), y = unMago.position().y(), frames = ["frame1HH.png", "frame2HH.png", "frame3HH.png", "frame4HH.png"])
-    return hechizoActual
-  }
-}
+    hechizoActual = new Hechizo(x= (unMago.position().x() + 5), y = unMago.position().y(), 
+    frames = ["frame1HH.png", "frame2HH.png", "frame3HH.png", "frame4HH.png"],
+    danio = 25
+    )
 
-object naturaleza inherits TiposDeMagia{
-  override method hechizoDe(unMago) {
-    hechizoActual = new Hechizo(x= (unMago.position().x() + 5), y = unMago.position().y(), frames = ["frame1HH.png", "frame2HH.png", "frame3HH.png", "frame4HH.png"])
     return hechizoActual
   }
 }

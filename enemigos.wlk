@@ -58,8 +58,8 @@ class TipoEnemigo {
     const property frames
     const property vida
     const property danio
+    //const property imagenesRecibeDanio
 
-    method frames() = frames
     method vida() = vida
 }
 

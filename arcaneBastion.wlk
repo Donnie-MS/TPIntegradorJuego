@@ -14,7 +14,7 @@ object arcaneBastion {
 
   method iniciar() {
     game.title("Arcane Bastion")
-    game.cellSize(12.5)
+    game.cellSize(12)
 	  game.height(48)
 	  game.width(96)
     game.onTick(100, "movimiento", {movimientoDerecha.forEach({cosa => cosa.moverseADerecha()})})
@@ -23,10 +23,15 @@ object arcaneBastion {
     game.onTick(150, "animarTodo", {cosasConAnimacion.forEach({cosa => cosa.animar()})})
 
     game.onCollideDo(magoProtagonista.hechizoActual(), {enemigo =>
-      enemigo.lanzarAtaque()
+      enemigo.recibirAtaque(magoProtagonista.danio())
     })
     administradorDeEnemigos.generarEnemigo(dragon)
     administradorDeEnemigos.generarEnemigo(dragon)
+    administradorDeEnemigos.generarEnemigo(dragon)
+    administradorDeEnemigos.generarEnemigo(dragon)
+    magoProtagonista.iniciar()
+    magoProtagonista.hacerHechizo()
+    
     //menu.iniciar()
   }
   method clear() {}
@@ -35,7 +40,8 @@ object arcaneBastion {
 class CosaAnimada {//SI VAN HACER UNO QUE SEA SOLO DE 4 IMAGENES NI MÁS NI MENOS 
   var property index = 0
   var property image = null
-  method frames()
+  const frames 
+  method frames ()= frames
   method animar() {
     self.index((index + 1)%4)
     self.image(self.frames().get(index))
