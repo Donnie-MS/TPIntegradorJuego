@@ -1022,3 +1022,22 @@
 {"level":"info","message":"⌛ Building environment","timeElapsed":123,"timestamp":"2025-07-01T14:54:04.454Z"}
 {"level":"info","message":"⌛ Validating mago.wlk","timeElapsed":157,"timestamp":"2025-07-01T14:54:04.612Z"}
 {"exitCode":"SIGHUP","level":"info","message":"👾 Game executed main.ArcaneBastion on c:\\Users\\joaom\\Documents\\TPGameIntegrador-wollokers-group-main","timeElapsed":554982,"timestamp":"2025-07-01T14:54:15.086Z"}
+{"level":"info","message":"🚀 Program executed \u001b[3m\u001b[34mmain.ArcaneBastion\u001b[39m\u001b[23m on \u001b[3m\u001b[34mc:\\Users\\joaom\\Documents\\TPGameIntegrador-wollokers-group-main\u001b[39m\u001b[23m","ok":true,"timeElapsed":585,"timestamp":"2025-07-01T14:54:17.948Z"}
+{"exitCode":"SIGHUP","level":"info","message":"👾 Game executed main.ArcaneBastion on c:\\Users\\joaom\\Documents\\TPGameIntegrador-wollokers-group-main","timeElapsed":241954,"timestamp":"2025-07-01T14:58:19.319Z"}
+{"level":"info","message":"🚀 Program executed \u001b[3m\u001b[34mmain.ArcaneBastion\u001b[39m\u001b[23m on \u001b[3m\u001b[34mc:\\Users\\joaom\\Documents\\TPGameIntegrador-wollokers-group-main\u001b[39m\u001b[23m","ok":true,"timeElapsed":592,"timestamp":"2025-07-01T14:58:22.296Z"}
+{"exitCode":"SIGHUP","level":"info","message":"👾 Game executed main.ArcaneBastion on c:\\Users\\joaom\\Documents\\TPGameIntegrador-wollokers-group-main","timeElapsed":38851,"timestamp":"2025-07-01T14:59:00.555Z"}
+{"level":"info","message":"🚀 Program executed \u001b[3m\u001b[34mmain.ArcaneBastion\u001b[39m\u001b[23m on \u001b[3m\u001b[34mc:\\Users\\joaom\\Documents\\TPGameIntegrador-wollokers-group-main\u001b[39m\u001b[23m","ok":true,"timeElapsed":598,"timestamp":"2025-07-01T14:59:03.462Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":251,"timestamp":"2025-07-01T15:01:05.874Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":224,"timestamp":"2025-07-01T15:01:06.100Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":139,"timestamp":"2025-07-01T15:01:06.342Z"}
+{"level":"info","message":"Removing diagnostics from /c:/Users/joaom/Documents/TPGameIntegrador-wollokers-group-main/assets/EscenarioNivelFacil.jpg","timestamp":"2025-07-01T15:01:06.343Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":101,"timestamp":"2025-07-01T15:01:06.446Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":107,"timestamp":"2025-07-01T15:01:06.571Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":212,"timestamp":"2025-07-01T15:01:06.805Z"}
+{"level":"info","message":"⌛ Validating niveles.wlk","timeElapsed":325,"timestamp":"2025-07-01T15:01:07.132Z"}
+{"level":"info","message":"⌛ Validating menu.wlk","timeElapsed":223,"timestamp":"2025-07-01T15:01:07.355Z"}
+{"level":"info","message":"⌛ Validating bastion.wlk","timeElapsed":202,"timestamp":"2025-07-01T15:01:07.558Z"}
+{"level":"info","message":"⌛ Validating administradorDeEnemigos.wlk","timeElapsed":198,"timestamp":"2025-07-01T15:01:07.757Z"}
+{"exitCode":"SIGHUP","level":"info","message":"👾 Game executed main.ArcaneBastion on c:\\Users\\joaom\\Documents\\TPGameIntegrador-wollokers-group-main","timeElapsed":132685,"timestamp":"2025-07-01T15:01:15.549Z"}
+{"level":"info","message":"🚀 Program executed \u001b[3m\u001b[34mmain.ArcaneBastion\u001b[39m\u001b[23m on \u001b[3m\u001b[34mc:\\Users\\joaom\\Documents\\TPGameIntegrador-wollokers-group-main\u001b[39m\u001b[23m","ok":true,"timeElapsed":579,"timestamp":"2025-07-01T15:01:17.924Z"}
+{"exitCode":"SIGHUP","level":"info","message":"👾 Game executed main.ArcaneBastion on c:\\Users\\joaom\\Documents\\TPGameIntegrador-wollokers-group-main","timeElapsed":18633,"timestamp":"2025-07-01T15:01:35.976Z"}
