@@ -27,17 +27,17 @@ object nivelFacil{
         //game.addVisual(self)
         config.configTeclas()
         magoProtagonista.iniciar()
-       administradorDeOleadas.iniciarOleada([arpia,esqueleto, dragon, arbolMaldito, fantasma, dragon])
+       administradorDeOleadas.iniciarOleada([dragon, dragon, dragon, dragon, dragon])
     }
 }
 object nivelSurvival{
-    method image() = "escenarioSurvival.png"
+   method image() = "escenarioSurvival.png"
     method position() = new MutablePosition(x = 0, y = 0)
     method iniciarNivel() {
           //game.addVisual(self)
           config.configTeclas()
           magoProtagonista.iniciar()
-          administradorDeOleadas.iniciarOleada([arbolMaldito, dragon, dragon, arbolMaldito, dragon, dragon])
+          administradorDeOleadas.iniciarOleada([dragon, dragon, dragon,dragon, dragon, dragon])
     }
 }
 object config{
