@@ -13,13 +13,8 @@ class Enemigo inherits CosaAnimada {
     // Frames para animación
     override method frames() = tipo.frames()
 
-    override method iniciar() {
-        super() // Agrega visual y lista de animación
-        arcaneBastion.movimientoIzquierda().add(self)
-        arcaneBastion.enemigosActivos().add(self)
-    }
-
-    method moverseAIzquierda() {
+    method mover() {
+        //SE MUEVE HACIA la derecha
         if (not self.sinVida()) {
             if (position.x() == 0) {
                 bastion.recibirDanio()
@@ -44,8 +39,6 @@ class Enemigo inherits CosaAnimada {
     method sinVida() = vida <= 0
 
     method eliminar() {
-        arcaneBastion.movimientoIzquierda().remove(self)
-        arcaneBastion.enemigosActivos().remove(self)
         game.removeVisual(self)
         administradorDeEnemigos.eliminarEnemigo(self)
     }

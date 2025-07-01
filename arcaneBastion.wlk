@@ -1,3 +1,4 @@
+import administradorDeHechizos.*
 import mago.*
 import enemigos.*
 import bastion.*
@@ -5,21 +6,14 @@ import menu.*
 import administradorDeEnemigos.*
 object arcaneBastion {
   const property cosasConAnimacion = []
-  const property movimientoDerecha = []
-  const property movimientoIzquierda = []
-  const property hechizosEnJuego = #{}
-  const property enemigosEnJuego = #{}
-  method hechizosActivos() = hechizosEnJuego
-  method enemigosActivos() = enemigosEnJuego
 
   method iniciar() {
     game.title("Arcane Bastion")
     game.cellSize(12)
 	  game.height(48)
 	  game.width(96)
-    game.onTick(100, "movimiento", {movimientoDerecha.forEach({cosa => cosa.moverseADerecha()})})
-    game.onTick(250, "movimiento", {movimientoIzquierda.forEach({cosa => cosa.moverseAIzquierda()})})
-
+    game.onTick(100, "movimiento", {administradorDeHechizos.moverHechizos()})//Se mueven hacia la derecha
+    game.onTick(250, "movimiento", {administradorDeEnemigos.moverEnemigos()})//Se meuven hacia la izquierda
     game.onTick(150, "animarTodo", {cosasConAnimacion.forEach({cosa => cosa.animar()})})
 
     game.onCollideDo(magoProtagonista.hechizoActual(), {enemigo =>
