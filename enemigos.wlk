@@ -13,8 +13,7 @@ class Enemigo inherits CosaAnimada {
     // Frames para animación
     override method frames() = tipo.frames()
 
-    method mover() {
-        //SE MUEVE HACIA la derecha
+    method moverIzquierda() {
         if (not self.sinVida()) {
             if (position.x() == 0) {
                 bastion.recibirDanio()
@@ -25,7 +24,16 @@ class Enemigo inherits CosaAnimada {
             }
         }
     }
+    method moverDerecha() {
+      if (position.x() == 100) {
+        self.eliminar()
+      }
+      else {
+        position.goRight(1)
+      }
+    } 
     method recibirAtaque(danioRecibido) {
+        self.image(tipo.imagenRecibeDanio())
         vida = vida - danioRecibido
         if (self.sinVida()) {
             self.eliminar()
@@ -51,7 +59,7 @@ class TipoEnemigo {
     const property frames
     const property vida
     const property danio
-    //const property imagenesRecibeDanio
+    const property imagenRecibeDanio
 
     method vida() = vida
 }
@@ -59,15 +67,21 @@ class TipoEnemigo {
 // ===============================
 // Definición de tipos de enemigos
 // ===============================
-object dragon inherits TipoEnemigo(frames = ["frame1D.png", "frame2D.png", "frame3D.png", "frame4D.png"], vida = 300, danio = 25) {}
+object dragon inherits TipoEnemigo(frames = ["frame1D.png", "frame2D.png", "frame3D.png", "frame4D.png"],
+    vida = 300, danio = 25, imagenRecibeDanio = "dragonHerido.png") {}
 
-object arbolMaldito inherits TipoEnemigo(frames = ["frame1A.png", "frame2A.png", "frame3A.png", "frame4A.png"], vida = 500, danio = 25) {}
+object arbolMaldito inherits TipoEnemigo(frames = ["frame1A.png", "frame2A.png", "frame3A.png", "frame4A.png"], 
+    vida = 500, danio = 25, imagenRecibeDanio = ""
+    ) {}
 
-object esqueleto inherits TipoEnemigo(frames = ["frame1E.png", "frame2E.png", "frame3E.png", "frame4E.png"], vida = 100, danio = 25) {}
+object esqueleto inherits TipoEnemigo(frames = ["frame1E.png", "frame2E.png", "frame3E.png", "frame4E.png"], 
+    vida = 100, danio = 25, imagenRecibeDanio = "") {}
 
-object fantasma inherits TipoEnemigo(frames = ["frame1F.png", "frame2F.png", "frame3F.png", "frame4F.png"], vida = 150, danio = 25) {}
+object fantasma inherits TipoEnemigo(frames = ["frame1F.png", "frame2F.png", "frame3F.png", "frame4F.png"],
+    vida = 150, danio = 25, imagenRecibeDanio = "") {}
 
-object arpia inherits TipoEnemigo(frames = ["frame1H.png", "frame2H.png", "frame3H.png", "frame4H.png"], vida = 200, danio = 25) {}
+object arpia inherits TipoEnemigo(frames = ["frame1H.png", "frame2H.png", "frame3H.png", "frame4H.png"],
+    vida = 200, danio = 25, imagenRecibeDanio = "") {}
 
 
 // ===============================

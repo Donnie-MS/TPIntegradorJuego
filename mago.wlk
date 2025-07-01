@@ -12,7 +12,7 @@ class Mago inherits CosaAnimada{
   }
   method hacerHechizo() {
     var posicionTemporal = new MutablePosition(x = x + 2, y = y)
-    administradorDeHechizos.generarProyectil(posicionTemporal, tipoDeMagia)
+    administradorDeHechizos.generarHechizo(posicionTemporal, tipoDeMagia)
   }
 }
 
@@ -21,8 +21,7 @@ class Hechizo inherits CosaAnimada{
   var property danio = tipo.danio()
   override method frames() = tipo.frames()
   var property position
-  method mover() {
-      //se mueve solo a la izquierda al menos que lo cambien
+  method moverDerecha() {
       if (position.x() == 100) {
         self.eliminar()
       }
@@ -34,7 +33,7 @@ class Hechizo inherits CosaAnimada{
     game.removeVisual(self)
     administradorDeHechizos.destruirHechizo(self)
   }
-  method colisionar() {}// esto es lo que ocurre cuando colisiona con algo
+  method colisionar() {tipo.colisionar()}// esto es lo que ocurre cuando colisiona con algo
 }
 
 // ===============================
@@ -44,7 +43,7 @@ class Hechizo inherits CosaAnimada{
 que podria hacer para que cuando se apriete 1 el mago cambie 
 su tipo de magia a tipoHielo: y dispare y asi con los demas
 */
-object magoProtagonista inherits Mago(tipoDeMagia = hielo, frames=["frame1MH.png", "frame2MH.png", "frame3MH.png", "frame4MH.png"]
+object magoProtagonista inherits Mago(tipoDeMagia = fuego, frames=["frame1MH.png", "frame2MH.png", "frame3MH.png", "frame4MH.png"]
 , x = 10, y = 12){
 }
 
@@ -57,15 +56,14 @@ class TiposDeMagia {
 
 object hielo inherits TiposDeMagia(frames = ["frame1HH.png", "frame2HH.png", "frame3HH.png", "frame4HH.png"],
   danio = 25){}
-object fuego inherits TiposDeMagia(frames = ["frame1HH.png", "frame2HH.png", "frame3HH.png", "frame4HH.png"],
+object fuego inherits TiposDeMagia(frames = ["frame1HF.png", "frame1HF.png", "frame1HF.png", "frame1HF.png"],
   danio = 25){}
 
-object tierra inherits TiposDeMagia(frames = ["rocaObstaculo.png", "rocaObstaculo.png", "rocaObstaculo.png", "rocaObstaculo.png"],
+object roca inherits TiposDeMagia(frames = ["rocaObstaculo.png", "rocaObstaculo.png", "rocaObstaculo.png", "rocaObstaculo.png"],
   danio = 0){
-
 }
 
-object viento inherits TiposDeMagia(frames = ["frame1HH.png", "frame2HH.png", "frame3HH.png", "frame4HH.png"],
+object viento inherits TiposDeMagia(frames = ["frame1HV.png", "frame1HV.png", "frame1HV.png", "frame1HV.png"],
   danio = 25){}
 
 

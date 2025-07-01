@@ -4,6 +4,7 @@ import enemigos.*
 import bastion.*
 import menu.*
 import administradorDeEnemigos.*
+import administradorDeOleadas.*
 object arcaneBastion {
   const property cosasConAnimacion = []
 
@@ -13,16 +14,16 @@ object arcaneBastion {
 	  game.height(48)
 	  game.width(96)
     game.onTick(100, "movimiento", {administradorDeHechizos.moverHechizos()})//Se mueven hacia la derecha
-    game.onTick(250, "movimiento", {administradorDeEnemigos.moverEnemigos()})//Se meuven hacia la izquierda
+    game.onTick(250, "movimiento", {administradorDeEnemigos.moverEnemigosIzquierda()})
     game.onTick(150, "animarTodo", {cosasConAnimacion.forEach({cosa => cosa.animar()})})
-
-    administradorDeEnemigos.generarEnemigo(dragon)
-    administradorDeEnemigos.generarEnemigo(dragon)
-    administradorDeEnemigos.generarEnemigo(dragon)
-    administradorDeEnemigos.generarEnemigo(dragon)
+    game.onTick(3000, "oleadas", {
+      if (administradorDeOleadas.estaActiva()) {
+          administradorDeOleadas.generarProximoEnemigo()
+      }
+  })
     magoProtagonista.iniciar()
     magoProtagonista.hacerHechizo()
-    
+    administradorDeOleadas.iniciarOleada([dragon,dragon, dragon, dragon, dragon, dragon])
     //menu.iniciar()
   }
   method clear() {}

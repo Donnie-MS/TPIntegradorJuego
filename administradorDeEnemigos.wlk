@@ -100,8 +100,11 @@ object administradorDeEnemigos {
         enemigos.forEach({ enemigo => enemigo.estaMuerto() })
     }
 
-    method moverEnemigos() {
-        enemigos.forEach({ enemigo => enemigo.mover() })
+    method moverEnemigosIzquierda() {
+        enemigos.forEach({ enemigo => enemigo.moverIzquierda() })
+    }
+    method moverEnemigosDerecha() {
+        enemigos.forEach({ enemigo => enemigo.moverDerecha() })
     }
 
     method cambiarFrame() {
