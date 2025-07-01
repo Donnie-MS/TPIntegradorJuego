@@ -44,7 +44,7 @@ object config{
     method configTeclas(){
         keyboard.up().onPressDo({magoProtagonista.moverArriba()})
         keyboard.down().onPressDo({magoProtagonista.moverAbajo()})
-        keyboard.enter().onPressDo({magoProtagonista.hacerHechizo()})
+        keyboard.f().onPressDo({magoProtagonista.hacerHechizo()})
         keyboard.num1().onPressDo({magoProtagonista.cambiarTipoDeMagiaA(hielo)})
         keyboard.num2().onPressDo({magoProtagonista.cambiarTipoDeMagiaA(fuego)})
         keyboard.num3().onPressDo({magoProtagonista.cambiarTipoDeMagiaA(roca)})
