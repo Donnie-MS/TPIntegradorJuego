@@ -6,7 +6,7 @@ import arcaneBastion.arcaneBastion
 program ArcaneBastion {
 	game.title("Arcane Bastion")
 
-	game.addVisual(pantallaInicial)	
+	
 	
 	arcaneBastion.iniciar()
 	game.start()

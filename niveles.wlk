@@ -1,4 +1,7 @@
+import administradorDeOleadas.*
+import enemigos.*
 import menu.*
+import mago.*
 object pantallaInicial {
     const position = new MutablePosition(x = 0, y = 0)
 
@@ -14,16 +17,37 @@ object pantallaInicial {
 }
 object gameOver{
     const position = new MutablePosition(x = 0, y = 0)
-    method image() = "gameOver.png" // Asegúrate de tener esta imagen
+    method image() = "gameOver.png" 
     method position()=position
 }
 object nivelFacil{
+    method image() = "nivelFacil.png" 
+    method position() = new MutablePosition(x = 0, y = 0)
      method iniciarNivel() {
-        
+        game.addVisual(self)
+        config.configTeclas()
+        magoProtagonista.iniciar()
+       administradorDeOleadas.iniciarOleada([arpia,esqueleto, dragon, arbolMaldito, fantasma, dragon])
     }
 }
 object nivelSurvival{
+    method image() = "nivelSurvival.png"
+    method position() = new MutablePosition(x = 0, y = 0)
     method iniciarNivel() {
-        
+          game.addVisual(self)
+          config.configTeclas()
+          magoProtagonista.iniciar()
+          administradorDeOleadas.iniciarOleada([arbolMaldito, dragon, dragon, arbolMaldito, dragon, dragon])
+    }
+}
+object config{
+    method configTeclas(){
+        keyboard.up().onPressDo({magoProtagonista.moverArriba()})
+        keyboard.down().onPressDo({magoProtagonista.moverAbajo()})
+        keyboard.enter().onPressDo({magoProtagonista.hacerHechizo()})
+        keyboard.num1().onPressDo({magoProtagonista.cambiarTipoDeMagiaA(hielo)})
+        keyboard.num2().onPressDo({magoProtagonista.cambiarTipoDeMagiaA(fuego)})
+        keyboard.num3().onPressDo({magoProtagonista.cambiarTipoDeMagiaA(roca)})
+        keyboard.num4().onPressDo({game.addVisual(gameOver)})
     }
 }

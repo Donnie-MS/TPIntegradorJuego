@@ -14,6 +14,16 @@ class Mago inherits CosaAnimada{
     var posicionTemporal = new MutablePosition(x = x + 2, y = y)
     administradorDeHechizos.generarHechizo(posicionTemporal, tipoDeMagia)
   }
+  method moverArriba() {
+    if (y < 48) {
+      y = y + 1
+    }
+  }
+  method moverAbajo() {
+    if (y > 0) {
+      y = y - 1
+    }
+  }
 }
 
 class Hechizo inherits CosaAnimada{
