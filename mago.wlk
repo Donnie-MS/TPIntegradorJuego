@@ -1,27 +1,31 @@
 import arcaneBastion.*
 import administradorDeHechizos.*
+
+const lineasY = [4, 12, 20, 28, 36]
+
 class Mago inherits CosaAnimada{
   var property tipoDeMagia 
   var property vida = 100
   var property x
-  var property y 
+  var property yIndex = 2 // empieza en la linea 3
   method danio() = tipoDeMagia.danio()
-  method position() = new MutablePosition(x = x, y = y)
+  method position() = new MutablePosition(x = x, y = lineasY.get(yIndex))
   method cambiarTipoDeMagiaA(unTipoMagia) {
     tipoDeMagia = unTipoMagia
   }
   method hacerHechizo() {
-    var posicionTemporal = new MutablePosition(x = x + 2, y = y)
+    var posicionTemporal = new MutablePosition(x = x + 2, y = lineasY.get(yIndex))
     administradorDeHechizos.generarHechizo(posicionTemporal, tipoDeMagia)
   }
   method moverArriba() {
-    if (y < 48) {
-      y = y + 1
+    if (yIndex < lineasY.size() - 1) {
+      yIndex += 1
     }
   }
+
   method moverAbajo() {
-    if (y > 0) {
-      y = y - 1
+    if (yIndex > 0) {
+      yIndex -= 1
     }
   }
 }
@@ -54,7 +58,7 @@ que podria hacer para que cuando se apriete 1 el mago cambie
 su tipo de magia a tipoHielo: y dispare y asi con los demas
 */
 object magoProtagonista inherits Mago(tipoDeMagia = fuego, frames=["frame1MH.png", "frame2MH.png", "frame3MH.png", "frame4MH.png"]
-, x = 10, y = 12){
+, x = 10){
 }
 
 
