@@ -16,9 +16,6 @@ object arcaneBastion {
     game.onTick(250, "movimiento", {administradorDeEnemigos.moverEnemigos()})//Se meuven hacia la izquierda
     game.onTick(150, "animarTodo", {cosasConAnimacion.forEach({cosa => cosa.animar()})})
 
-    game.onCollideDo(magoProtagonista.hechizoActual(), {enemigo =>
-      enemigo.recibirAtaque(magoProtagonista.danio())
-    })
     administradorDeEnemigos.generarEnemigo(dragon)
     administradorDeEnemigos.generarEnemigo(dragon)
     administradorDeEnemigos.generarEnemigo(dragon)

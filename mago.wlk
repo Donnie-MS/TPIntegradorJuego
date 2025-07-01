@@ -1,18 +1,18 @@
 import arcaneBastion.*
 import administradorDeHechizos.*
 class Mago inherits CosaAnimada{
-  var property hechizoActual = self.tipoDeMagia().hechizoDe(self)
   var property tipoDeMagia 
   var property vida = 100
   var property x
   var property y 
-  method danio() = hechizoActual.danio()
+  method danio() = tipoDeMagia.danio()
   method position() = new MutablePosition(x = x, y = y)
   method cambiarTipoDeMagiaA(unTipoMagia) {
     tipoDeMagia = unTipoMagia
   }
   method hacerHechizo() {
-    self.hechizoActual().iniciar()
+    var posicionTemporal = new MutablePosition(x = x + 2, y = y)
+    administradorDeHechizos.generarProyectil(posicionTemporal, tipoDeMagia)
   }
 }
 
@@ -27,7 +27,7 @@ class Hechizo inherits CosaAnimada{
         self.eliminar()
       }
       else {
-        position.goLeft(1)
+        position.goRight(1)
       }
   }
   method eliminar() {
@@ -45,7 +45,7 @@ que podria hacer para que cuando se apriete 1 el mago cambie
 su tipo de magia a tipoHielo: y dispare y asi con los demas
 */
 object magoProtagonista inherits Mago(tipoDeMagia = hielo, frames=["frame1MH.png", "frame2MH.png", "frame3MH.png", "frame4MH.png"]
-, x = 15, y = 12){
+, x = 10, y = 12){
 }
 
 
@@ -56,19 +56,17 @@ class TiposDeMagia {
 }
 
 object hielo inherits TiposDeMagia(frames = ["frame1HH.png", "frame2HH.png", "frame3HH.png", "frame4HH.png"],
-  danio = 25)
-{}
+  danio = 25){}
 object fuego inherits TiposDeMagia(frames = ["frame1HH.png", "frame2HH.png", "frame3HH.png", "frame4HH.png"],
-  danio = 25)
-{}
+  danio = 25){}
 
-object tierra inherits TiposDeMagia(frames = ["frame1HH.png", "frame2HH.png", "frame3HH.png", "frame4HH.png"],
-  danio = 25)
-{}
+object tierra inherits TiposDeMagia(frames = ["rocaObstaculo.png", "rocaObstaculo.png", "rocaObstaculo.png", "rocaObstaculo.png"],
+  danio = 0){
+
+}
 
 object viento inherits TiposDeMagia(frames = ["frame1HH.png", "frame2HH.png", "frame3HH.png", "frame4HH.png"],
-  danio = 25)
-{}
+  danio = 25){}
 
 
 

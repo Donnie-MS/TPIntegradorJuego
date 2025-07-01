@@ -19,7 +19,12 @@ object administradorDeHechizos {
         nombreParaHechizo = new Hechizo(position = posicion, tipo = tipoDeMagia, frames = tipoDeMagia.frames(), danio = tipoDeMagia.danio())
         hechizos.add(nombreParaHechizo)
         self.sumarProyectil()
-        game.addVisual(nombreParaHechizo)
+        nombreParaHechizo.iniciar()
+
+        game.onCollideDo(nombreParaHechizo, { enemigo => 
+            enemigo.recibirAtaque(nombreParaHechizo.danio())
+            nombreParaHechizo.eliminar()
+        })
     }
 
     // Mueve cada proyectil en la lista
