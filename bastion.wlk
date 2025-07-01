@@ -5,7 +5,7 @@ object bastion {
     method sinVida() = vida <= 0
     method sonidoDanio() = game.sound("")
 
-    // position()
+    method position() = new MutablePosition(x = 5, y = 5)
     method text() = "Vidas restantes: " + vida.toString()
 
     method textColor() = "#FA0770"

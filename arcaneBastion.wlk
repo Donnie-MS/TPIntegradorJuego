@@ -26,8 +26,8 @@ object arcaneBastion {
       if (administradorDeOleadas.estaActiva()) {
           administradorDeOleadas.generarProximoEnemigo()
       }
-  })
-  
+    })
+   
     
     //administradorDeOleadas.iniciarOleada([dragon,dragon, dragon, dragon, dragon, dragon])
     //menu.iniciar()

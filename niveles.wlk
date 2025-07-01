@@ -8,9 +8,13 @@ object pantallaInicial {
     method image() = "PantallaInicio.png" // Asegúrate de tener esta imagen
     method position() = position
     method desaparecerAlTocar(){
-        keyboard.space().onPressDo({game.removeVisual(self)})
-        menu.aparecerAlTocar()
-    }
+    keyboard.space().onPressDo({
+        if (game.hasVisual(self)){
+            game.removeVisual(self)
+            game.addVisual(menu) 
+        }
+    })
+}
     method aparecerAlTocar(){
         keyboard.enter().onPressDo({game.addVisual(self)})
     }
@@ -48,6 +52,6 @@ object config{
         keyboard.num1().onPressDo({magoProtagonista.cambiarTipoDeMagiaA(hielo)})
         keyboard.num2().onPressDo({magoProtagonista.cambiarTipoDeMagiaA(fuego)})
         keyboard.num3().onPressDo({magoProtagonista.cambiarTipoDeMagiaA(roca)})
-        keyboard.num4().onPressDo({game.addVisual(gameOver)})
+        keyboard.num4().onPressDo({magoProtagonista.cambiarTipoDeMagiaA(viento)})
     }
 }

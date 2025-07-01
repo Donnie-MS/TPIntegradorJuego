@@ -3,21 +3,22 @@ import niveles.*
 object menu{
     method position() = game.origin()
     method image() = "menu.png" 
-    method aparecerAlTocar(){
-        keyboard.space().onPressDo({game.addVisual(self)})
-    }
     method activarModoFacil(){
         keyboard.e().onPressDo({
-            game.removeVisual(self)
-            game.addVisual(nivelFacil)
-            nivelFacil.iniciarNivel()
+            if (game.hasVisual(self)){
+                game.removeVisual(self)
+                game.addVisual(nivelFacil)
+                nivelFacil.iniciarNivel()
+            }
         })
     }
     method activarModoSurvival(){
         keyboard.s().onPressDo({
-            game.removeVisual(self)
-            game.addVisual(nivelSurvival)
-            nivelSurvival.iniciarNivel()
+            if (game.hasVisual(self)){
+                game.removeVisual(self)
+                game.addVisual(nivelSurvival)
+                nivelSurvival.iniciarNivel()
+            }
         })
     }
 }

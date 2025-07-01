@@ -1,4 +1,9 @@
 import mago.*
+/*
+Hace que colisionen con el pixel actual o el siguiente.
+ya que parece que como el dragon va restando y el hechizo sumando en el eje x
+estos se omiten
+*/
 
 // ===============================
 // Administrador de Hechizos: Controla la creación y gestión de Hechizos

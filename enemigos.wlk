@@ -68,7 +68,7 @@ class TipoEnemigo {
 // Definición de tipos de enemigos
 // ===============================
 object dragon inherits TipoEnemigo(frames = ["frame1D.png", "frame2D.png", "frame3D.png", "frame4D.png"],
-    vida = 300, danio = 25, imagenRecibeDanio = "dragonHerido.png") {}
+    vida = 100, danio = 25, imagenRecibeDanio = "dragonHerido.png") {}
 
 object arbolMaldito inherits TipoEnemigo(frames = ["frame1A.png", "frame2A.png", "frame3A.png", "frame4A.png"], 
     vida = 500, danio = 25, imagenRecibeDanio = ""
