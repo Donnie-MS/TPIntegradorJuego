@@ -15,15 +15,16 @@ object administradorDeHechizos {
 
     // Genera un nuevo Hechizo en la posición y tipo especificado
     method generarHechizo(posicion, tipoDeMagia) {
-        var nombreParaHechizo = self.nombre()
-        nombreParaHechizo = new Hechizo(position = posicion, tipo = tipoDeMagia, frames = tipoDeMagia.frames(), danio = tipoDeMagia.danio())
-        hechizos.add(nombreParaHechizo)
+        const hechizo = new Hechizo(position = posicion, tipo = tipoDeMagia, frames = tipoDeMagia.frames(), danio = tipoDeMagia.danio())
+        
+        hechizos.add(hechizo)
         self.sumarHechizo()
-        nombreParaHechizo.iniciar()
 
-        game.onCollideDo(nombreParaHechizo, { enemigo => 
-            enemigo.recibirAtaque(nombreParaHechizo.danio())
-            nombreParaHechizo.eliminar()
+        hechizo.iniciar()
+
+        game.onCollideDo(hechizo, { enemigo => 
+            enemigo.recibirAtaque(hechizo.danio())
+            hechizo.eliminar()
         })
     }
 

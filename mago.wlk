@@ -43,7 +43,7 @@ class Hechizo inherits CosaAnimada{
     game.removeVisual(self)
     administradorDeHechizos.destruirHechizo(self)
   }
-  method colisionar() {tipo.colisionar()}// esto es lo que ocurre cuando colisiona con algo
+  method colisionar() {}// esto es lo que ocurre cuando colisiona con algo
 }
 
 // ===============================
