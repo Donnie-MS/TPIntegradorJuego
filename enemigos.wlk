@@ -1,6 +1,6 @@
 import arcaneBastion.*
 import bastion.*
-
+import administradorDeEnemigos.*
 // ===============================
 // Clase Base: Enemigo
 // ===============================
@@ -20,14 +20,16 @@ class Enemigo inherits CosaAnimada {
     }
 
     method moverseAIzquierda() {
-        if (position.x() > 0) {
-            position.goLeft(1)
-        } else {
-            bastion.recibirDanio(self)
-            self.eliminar()
+        if (not self.sinVida()) {
+            if (position.x() == 0) {
+                bastion.recibirDanio()
+                self.eliminar()
+            }
+            else {
+                position.goLeft(1)
+            }
         }
     }
-
     method recibirAtaque(danioRecibido) {
         vida = vida - danioRecibido
         if (self.sinVida()) {
@@ -44,7 +46,8 @@ class Enemigo inherits CosaAnimada {
     method eliminar() {
         arcaneBastion.movimientoIzquierda().remove(self)
         arcaneBastion.enemigosActivos().remove(self)
-        self.removeVisual()
+        game.removeVisual(self)
+        administradorDeEnemigos.eliminarEnemigo(self)
     }
 }
 

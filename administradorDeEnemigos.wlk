@@ -75,11 +75,8 @@ object administradorDeEnemigos {
 
     method eliminarEnemigo(enemigo) {
         const y = enemigo.position().y()
-        const lineaCorrespondiente = cantDeEnemigosPorLinea.find({ linea => linea.linea() == y })
-        if (lineaCorrespondiente != null) {
-            const indice = cantDeEnemigosPorLinea.indexOf(lineaCorrespondiente)
-            self.decrementarLinea(indice)
-        }
+        const lineaIndice = self.obtenerIndiceLinea(y)
+        self.decrementarLinea(lineaIndice)
         //administradorDeOleadas.reducirEnemigo()
         enemigos.remove(enemigo)
     }
@@ -117,6 +114,19 @@ object administradorDeEnemigos {
 
     method decrementarLinea(lineaIndice) {
         cantDeEnemigosPorLinea.get(lineaIndice).restarCantidad()
+    }
+
+    method obtenerIndiceLinea(y) {
+        var indice = 0
+        var resultado = -1
+
+        cantDeEnemigosPorLinea.forEach({ lineaActual =>
+            if (resultado == -1 && lineaActual.linea() == y) {
+                resultado = indice
+            }
+            indice += 1
+        })
+        return resultado
     }
 
     method hayEnemigoFila(numeroFila) = cantDeEnemigosPorLinea.get(numeroFila).tieneEnemigos()

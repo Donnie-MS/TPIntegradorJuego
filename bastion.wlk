@@ -1,7 +1,8 @@
 import niveles.*
+import administradorDeEnemigos.*
 object bastion {
     var property vida = 3
-
+    method sinVida() = vida <= 0
     method sonidoDanio() = game.sound("")
 
     // position()
@@ -9,18 +10,15 @@ object bastion {
 
     method textColor() = "#FA0770"
 
-    method recibirDanio(unEnemigo) {
-        vida -= 1
-        self.sonidoDanio().volume(0.4)
-        if (vida <= 0) {
-            //cambiar a una pantalla de que perdiste
-            game.addVisual(gameOver)
-            pantallaInicial.aparecerAlTocar()
-            //terminar el nivel 
+    method recibirDanio() {
+        if (not self.sinVida()) {
+            vida = vida - 1
+            if (self.sinVida()) {
+                game.addVisual(gameOver)
+                pantallaInicial.aparecerAlTocar()
+            }
         }
-        //elseif () matar a todos los de la fila
     }
-
     method reset() {
     vida = 3
     }
